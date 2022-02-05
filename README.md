@@ -1,4 +1,4 @@
-# slm-countdown
+# &lt;slm-countdown&gt; element
 
 This lightweight (606byte min+gzip) and simple-to-use vanilla js web component will display the amount of time left or passed relative to a date with a variable refresh rate to take less resource. No additional dependencies are required.
 
