@@ -1,0 +1,42 @@
+{
+    "name": "slm-countdown",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "This lightweight (606byte min+gzip) and simple-to-use vanilla js web component will display the amount of time left or passed relative to a date",
+    "main": "src/countdown.js",
+    "directories": {
+        "src": "src"
+    },
+    "scripts": {
+        "fix:js": "eslint --fix ./src/",
+        "fix:format": "prettier --write .",
+        "lint": "eslint ./src/",
+        "test": "mocha --reporter spec",
+        "minify:js": "terser --config-file .terser.json ./dist/slm-countdown.js -o ./dist/slm-countdown.min.js --source-map",
+        "prebuild": "npm run lint && npm run test",
+        "build": "npm run fix:format && rollup --config && npm run minify:js",
+        "postbuild": "cp ./dist/slm-countdown.min.js ./examples/slm-countdown.min.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/salemjs/slm-countdown.git"
+    },
+    "author": "Sandor Huszagh <support@salemjs.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/salemjs/slm-countdown/issues",
+        "email": "support@salemjs.com"
+    },
+    "homepage": "https://salemjs.com",
+    "devDependencies": {
+        "css-minify": "^2.0.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.24.2",
+        "prettier": "2.3.2",
+        "rollup": "^2.56.3",
+        "terser": "^5.7.2",
+        "chai": "^4.3.4",
+        "mocha": "^9.1.1"
+    }
+}
